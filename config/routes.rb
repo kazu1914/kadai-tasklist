@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-  get 'sessions/create'
-  get 'sessions/destroy'
-  root to: 'tasks#index'
+   root to: 'tasks#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
@@ -10,6 +7,6 @@ Rails.application.routes.draw do
   
   
  get 'signup', to: 'users#new'
-  resources :users, only: [:show, :new, :create]
+  resources :users, only: [:create]
   resources :tasks
 end
